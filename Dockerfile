@@ -1,5 +1,5 @@
 FROM gazzyt/alpine-build-cmake:1.2
-RUN apk add perl curl flex bison ninja
+RUN apk update; apk add perl curl flex bison ninja pkgconf bash
 WORKDIR /opt
 RUN git clone https://github.com/microsoft/vcpkg.git
 WORKDIR /opt/vcpkg/triplets
