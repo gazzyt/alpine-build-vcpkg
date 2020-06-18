@@ -1,5 +1,5 @@
-FROM gazzyt/alpine-build-cmake:1.2
-RUN apk update; apk add perl curl flex bison ninja pkgconf bash
+FROM alpine:3.11
+RUN apk update; apk upgrade; apk add build-base linux-headers cmake git binutils perl curl flex bison ninja pkgconf bash openssl-dev
 WORKDIR /opt
 RUN git clone https://github.com/microsoft/vcpkg.git
 WORKDIR /opt/vcpkg/triplets
