@@ -1,6 +1,10 @@
+Setup Docker to build the container
+===================================
+docker buildx create --name mybuilder --bootstrap --use --config buildkitd.toml
+
 To build and push the container
 ======================
-docker buildx build --platform linux/amd64,linux/arm/v7 -t gazzyt/alpine-build-vcpkg:1.0 --push .
+docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64/v8 -t gazzyt/alpine-build-vcpkg:1.5 --push .
 
 To run a cmake build
 ====================
