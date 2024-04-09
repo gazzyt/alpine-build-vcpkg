@@ -1,6 +1,13 @@
 Setup Docker to build the container
 ===================================
+```
+docker buildx create --name mybuilder --bootstrap --use
+```
+
+Or, to limit concurrency:
+```
 docker buildx create --name mybuilder --bootstrap --use --config buildkitd.toml
+```
 
 To build and push the container
 ======================
