@@ -11,7 +11,7 @@ Setup Docker to build the container
 ===================================
 You will need to do this if you have not previously setup `buildx`:
 ```
-docker buildx create --name mybuilder2 --bootstrap --use --driver-opt "image=moby/buildkit:v0.19.0"
+docker buildx create --name mybuilder2 --bootstrap --use --driver-opt "image=moby/buildkit:v0.20.2"
 ```
 
 Or, to limit concurrency (if you are short on RAM):
