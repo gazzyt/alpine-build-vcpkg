@@ -1,16 +1,16 @@
-FROM gazzyt/alpine-build-vcpkg:1.5 as build
+FROM gazzyt/alpine-build-vcpkg:1.9 AS build
 
 LABEL description="Build container"
 
 COPY . /tmp/example/
 
-ENV EXAMPLE_ROOT /tmp/example
+ENV EXAMPLE_ROOT=/tmp/example
 
 RUN cd /tmp/example \
     && cmake --preset "Docker Linux Static Release" . \
     && cmake --build build/linux-static-release --parallel 14
 
-FROM scratch as runtime
+FROM scratch AS runtime
 
 LABEL description="Run container"
 
